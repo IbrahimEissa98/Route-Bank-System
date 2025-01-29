@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1738159289 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route bank system\main.cpp
+	<iostream>
+	<string>
+	<exception>
+	<Windows.h>
+	<cstdlib>
+	<cmath>
+	"functions.h"
+	"Person.h"
+	"Date.h"
+
+1738116170 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route bank system\functions.h
+	<string>
+	<exception>
+	<Windows.h>
+	<cstdlib>
+	<cmath>
+	"functions.h"
+
