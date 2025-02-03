@@ -9,14 +9,21 @@
 #include <Windows.h>
 #include <cstdlib>
 #include <cmath>
-#include "functions.h"
-#include "Person.h"
+#include "Functions.h"
+#include "Client.h"
+#include "Validation.h"
 using namespace std;
 
-
+double Person::dollar = 50.54;
+int Person::staticBankId = 1000000000;
 
 int main()
 {
 
-}
+    Client c("25406231231233", "Ibrahim Eissa", "Hshd!7567", "male", 2000);
+    c.displayInfo();
 
+	addClient();
+
+    addEmployee();
+}
