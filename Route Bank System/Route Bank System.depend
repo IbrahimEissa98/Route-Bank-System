@@ -18,3 +18,75 @@
 	<cmath>
 	"functions.h"
 
+1738556839 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\main.cpp
+	<iostream>
+	<string>
+	<exception>
+	<Windows.h>
+	<cstdlib>
+	<cmath>
+	"Functions.h"
+	"Client.h"
+	"Validation.h"
+
+1738556568 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.h
+	<iostream>
+	<string>
+	"Validation.h"
+
+1738557500 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\person.h
+	<iostream>
+	<string>
+	<exception>
+	"Functions.h"
+	"Date.h"
+	"Validation.h"
+
+1738556222 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\date.h
+	<iostream>
+	<string>
+	<exception>
+	"functions.h"
+
+1738556375 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.cpp
+	"Client.h"
+
+1738557000 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.h
+	<iostream>
+	<string>
+	<exception>
+	"Person.h"
+
+1738557562 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\validation.h
+	<iostream>
+	<string>
+
+1738556611 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\validation.cpp
+	"Validation.h"
+
+1738556499 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\admin.cpp
+	"Admin.h"
+
+1738556513 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\admin.h
+	<iostream>
+	<string>
+	"Employee.h"
+
+1738557067 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\employee.h
+	<iostream>
+	<string>
+	<exception>
+	"Date.h"
+	"Person.h"
+
+1738556463 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\employee.cpp
+	"Employee.h"
+
+1738556553 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.cpp
+	"Functions.h"
+	<iostream>
+	<string>
+	"Validation.h"
+	"Client.h"
+	"Employee.h"
+

@@ -1,14 +1,13 @@
-#ifndef FUNCTIONS_H_INCLUDED
-#define FUNCTIONS_H_INCLUDED
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
+#include <iostream>
 #include <string>
-#include <exception>
-#include <Windows.h>
-#include <cstdlib>
-#include <cmath>
-#include "functions.h"
+#include "Validation.h"
 using namespace std;
 
+	void addClient();
 
+	void addEmployee();
 
-#endif // FUNCTIONS_H_INCLUDED
+#endif // FUNCTIONS_H

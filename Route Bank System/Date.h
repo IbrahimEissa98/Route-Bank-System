@@ -7,9 +7,8 @@
 #include "functions.h"
 using namespace std;
 
-class Date
-{
-    	// Attributes:
+class Date {
+	// Attributes:
 	int day;
 	int month;
 	int year;
@@ -52,7 +51,7 @@ public:
 		return this->year;
 	}
 	string getDate() {
-		return to_string(day) + " / " + to_string(month) + " / " + to_string(month);
+		return to_string(day) + " / " + to_string(month) + " / " + to_string(year);
 	}
 
 	// Methods:
