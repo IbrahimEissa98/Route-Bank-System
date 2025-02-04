@@ -18,15 +18,22 @@ public:
 		this->salary = 0;
 	}
 
-	Employee(string nationalID, string name, string password, string gender, double salary)
-		:Person(nationalID, name, password, gender) {
+	Employee(string nationalID, string name, string password,
+		string gender, string phone, string email, double salary)
+		:Person(nationalID, name, password, gender,phone,email) {
+		this->salary = salary;
+	}
+
+	Employee(string nationalID, string name, string password,
+		string gender, string phone, double salary)
+		:Person(nationalID, name, password, gender, phone) {
 		this->salary = salary;
 	}
 
 
 	void setSalary(double salary) {
 		if (!(Validation::balance(salary))) {
-			//throw exception("Invalide less Salary !!");
+			//throw exception("Invalid less Salary !!");
 		}
 		else {
 			this->salary = salary;
@@ -45,6 +52,8 @@ public:
 		cout << "Date of Birth : " << this->dob.getDate() << endl;
 		cout << "Age           : " << this->age << endl;
 		cout << "Gender        : " << this->gender << endl;
+		cout << "Phone         : " << this->phone << endl;
+		cout << "Email         : " << this->email << endl;
 		cout << "Salary        : " << this->salary << " EGP" << endl;
 		cout << "========================================" << endl;
 	}

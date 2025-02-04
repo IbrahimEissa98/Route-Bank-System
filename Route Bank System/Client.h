@@ -19,8 +19,15 @@ public:
 		this->balance = 0;
 		accountNumber = "Route" + to_string(++staticAccountNumber);
 	}
-	Client(string nationalID, string name, string password, string gender, double balance)
-		:Person(nationalID, name, password, gender) {
+	Client(string nationalID, string name, string password,
+		string gender, string phone, string email, double balance)
+		:Person(nationalID, name, password, gender,phone,email) {
+		accountNumber = "Route" + to_string(++staticAccountNumber);
+		this->balance = balance;
+	}
+	Client(string nationalID, string name, string password,
+		string gender, string phone, double balance)
+		:Person(nationalID, name, password, gender, phone) {
 		accountNumber = "Route" + to_string(++staticAccountNumber);
 		this->balance = balance;
 	}
@@ -39,7 +46,7 @@ public:
 	// Setters:
 	void setBalance(double balance) {
 		if (!(Validation::balance(balance))) {
-			//throw exception("Invalide Start Balance !!");
+			//throw exception("Invalid Start Balance !!");
 		}
 		this->balance = balance;
 	}
@@ -61,7 +68,7 @@ public:
 			this->balance -= amount;
 		}
 		else {
-			//throw exception("Invalide Amount !!");
+			//throw exception("Invalid Amount !!");
 		}
 	}
 	void trnsferTo(double amount, Client& recipient) {
@@ -70,7 +77,7 @@ public:
 			recipient.balance += amount;
 		}
 		else {
-			//throw exception("Invalide Amount !!");
+			//throw exception("Invalid Amount !!");
 		}
 	}
 	void checkBalance() {
@@ -87,6 +94,8 @@ public:
 		cout << "Date of Birth : " << this->dob.getDate() << endl;
 		cout << "Age           : " << this->age << endl;
 		cout << "Gender        : " << this->gender << endl;
+		cout << "Phone         : " << this->phone << endl;
+		cout << "Email         : " << this->email << endl;
 		cout << "Balance       : " << this->balance<<" EGP" << endl;
 		cout << "Balance in $  : " << getBalanceInDollar()<<" $" << endl;
 		cout << "========================================" << endl;
