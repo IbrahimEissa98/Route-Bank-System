@@ -10,7 +10,9 @@
 #include <cstdlib>
 #include <cmath>
 #include "Functions.h"
+//#include "Person.h"
 #include "Client.h"
+//#include "Date.h"
 #include "Validation.h"
 using namespace std;
 
@@ -20,10 +22,12 @@ int Person::staticBankId = 1000000000;
 int main()
 {
 
-    Client c("25406231231233", "Ibrahim Eissa", "Hshd!7567", "male", 2000);
+    WelcomePage();
+
+    Client c("25436231231233", "Ibrahim Eissa", "Hshd!7567", "male", "01012345678", 2000);
     c.displayInfo();
 
-	addClient();
+    addClient();
 
     addEmployee();
 }

@@ -10,4 +10,6 @@ using namespace std;
 
 	void addEmployee();
 
+	void WelcomePage();
+
 #endif // FUNCTIONS_H

@@ -7,6 +7,8 @@
 #include "Functions.h"
 #include "Date.h"
 #include "Validation.h"
+#include <chrono>
+using namespace std::chrono;
 using namespace std;
 
 class Person {
@@ -15,8 +17,23 @@ protected:
 	static double dollar;
 	static int staticBankId;
 	int bankId, age;
-	string name, password, nationalID, gender;
+	string name, password, nationalID, gender, phone, email;
 	Date dob;		// dop -> date of birth
+
+	int calculateAge() {
+		int birthYear = dob.getYear();
+		if (birthYear < 18) {
+			//throw exception("Unable to create account, you are under 18!");
+		}
+		// to get current year
+		auto now = system_clock::now();
+		time_t now_c = system_clock::to_time_t(now);
+		tm now_tm;
+		localtime_s(&now_tm, &now_c);
+		int currentYear = 1900 + now_tm.tm_year;
+		return
+			(currentYear - birthYear);
+	}
 
 public:
 	// Constructors:
@@ -24,37 +41,65 @@ public:
 		this->bankId = ++staticBankId;
 		this->age = 0;
 	}
-	Person(string nationalID, string name, string password, string gender) {
+	Person(string nationalID, string name, string password,
+		string gender, string phone, string email) {
 		this->bankId = ++staticBankId;
 		this->nationalID = nationalID;
 		this->dob = getBirthDateFromId();
-		this->age = 2025 - dob.getYear();   // validate above 18
+		this->age = calculateAge();   // validate above 18
 		this->name = name;
 		this->password = password;
 		this->gender = gender;
+		this->phone = phone;
+		this->email = email;
+	}
+	Person(string nationalID, string name, string password,
+		string gender, string phone) {
+		this->bankId = ++staticBankId;
+		this->nationalID = nationalID;
+		this->dob = getBirthDateFromId();
+		this->age = calculateAge();   // validate above 18
+		this->name = name;
+		this->password = password;
+		this->gender = gender;
+		this->phone = phone;
 	}
 
 	// Setters:
 	void setNationalID(string nationalID) {
 		if (!(Validation::nationalId(nationalID))) {
 			//throw exception("Invalid National ID !!");
-		}
-		this->nationalID = nationalID;
+		}else
+			this->nationalID = nationalID;
 	}
 	void setName(string name) {
 		if (!(Validation::name(name))) {
 			//throw exception("Invalid Name !!");
-		}
-		this->name = name;
+		}else
+			this->name = name;
 	}
 	void setPassword(string password) {
 		if (!(Validation::password(password))) {
 			//throw exception("Invalid Password ID !!\nPlease use Capital and small letters and at least 1 number and symbol :)");
-		}
-		this->password = password;
+		}else
+			this->password = password;
 	}
 	void setGender(string gender) {
-		this->gender = gender;
+			this->gender = gender;
+	}
+	void setPhone(string phone) {
+		if (!(Validation::phone(phone))) {
+			//throw exception("Invalid Phone number !!");
+		}
+		else
+			this->phone = phone;
+	}
+	void setEmail(string email) {
+		if (!(Validation::email(email))) {
+			//throw exception("Invalid Email !!");
+		}
+		else
+			this->email = email;
 	}
 
 	// Getters :
@@ -79,11 +124,20 @@ public:
 	string getGender() {
 		return this->gender;
 	}
+	string getphone() {
+		return this->phone;
+	}
+	string getEmail() {
+		return this->email;
+	}
 
 	// Methods:
 	virtual void displayInfo() = 0;
 
 	Date getBirthDateFromId() {
+		if (!Validation::nationalId(this->nationalID)) {
+			//throw exception("Invalid National ID !");
+		}
 		string nationalId = this->nationalID;
 		string date = nationalId.substr(0, 7);
 		int nDate = stoi(date);
