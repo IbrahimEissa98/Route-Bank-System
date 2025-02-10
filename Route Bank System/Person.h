@@ -1,15 +1,11 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include <iostream>
-#include <string>
 #include <exception>
-#include "Functions.h"
 #include "Date.h"
 #include "Validation.h"
 #include <chrono>
 using namespace std::chrono;
-using namespace std;
 
 class Person {
 protected:
@@ -20,19 +16,46 @@ protected:
 	string name, password, nationalID, gender, phone, email;
 	Date dob;		// dop -> date of birth
 
+	Date getBirthDateFromId() {
+		if (!Validation::nationalId(this->nationalID)) {
+			cout << "Invalid National ID !" << endl;
+		}
+		string nationalId = this->nationalID;
+		string date = nationalId.substr(0, 7);
+		int nDate = stoi(date);
+		int arr[7]{};
+		for (int i = 6; i >= 0; i--)
+		{
+			arr[i] = nDate % 10;
+			nDate /= 10;
+		}
+		int day{}, month{}, year{};
+		day = arr[5] * 10 + arr[6];
+		month = arr[3] * 10 + arr[4];
+		if (arr[0] == 2) {
+			year = 1900 + arr[1] * 10 + arr[2];
+		}
+		else if (arr[0] == 3) {
+			year = 2000 + arr[1] * 10 + arr[2];
+		}
+		return Date(day, month, year);
+	}
+
 	int calculateAge() {
 		int birthYear = dob.getYear();
-		if (birthYear < 18) {
-			//throw exception("Unable to create account, you are under 18!");
-		}
+
 		// to get current year
 		auto now = system_clock::now();
 		time_t now_c = system_clock::to_time_t(now);
 		tm now_tm;
 		localtime_s(&now_tm, &now_c);
 		int currentYear = 1900 + now_tm.tm_year;
-		return
-			(currentYear - birthYear);
+		int ageC = currentYear - birthYear;
+		if (ageC >= 18) {
+			return ageC;
+		}
+		else
+			cout << "Unable to create account, you are under 18!" << endl;
 	}
 
 public:
@@ -44,62 +67,62 @@ public:
 	Person(string nationalID, string name, string password,
 		string gender, string phone, string email) {
 		this->bankId = ++staticBankId;
-		this->nationalID = nationalID;
+		setNationalID(nationalID);
 		this->dob = getBirthDateFromId();
 		this->age = calculateAge();   // validate above 18
-		this->name = name;
-		this->password = password;
+		setName(name);
+		setPassword(password);
 		this->gender = gender;
-		this->phone = phone;
-		this->email = email;
+		setPhone(phone);
+		setEmail(email);
 	}
 	Person(string nationalID, string name, string password,
 		string gender, string phone) {
 		this->bankId = ++staticBankId;
-		this->nationalID = nationalID;
+		setNationalID(nationalID);
 		this->dob = getBirthDateFromId();
 		this->age = calculateAge();   // validate above 18
-		this->name = name;
-		this->password = password;
+		setName(name);
+		setPassword(password);
 		this->gender = gender;
-		this->phone = phone;
+		setPhone(phone);
 	}
 
 	// Setters:
 	void setNationalID(string nationalID) {
-		if (!(Validation::nationalId(nationalID))) {
-			//throw exception("Invalid National ID !!");
-		}else
+		if (Validation::nationalId(nationalID)) {
 			this->nationalID = nationalID;
+		}else
+			cout << "Invalid National ID !!" << endl;
 	}
 	void setName(string name) {
-		if (!(Validation::name(name))) {
-			//throw exception("Invalid Name !!");
-		}else
+		if (Validation::name(name)) {
 			this->name = name;
+		}else
+			cout << "Invalid Name !!" << endl;
 	}
 	void setPassword(string password) {
-		if (!(Validation::password(password))) {
-			//throw exception("Invalid Password ID !!\nPlease use Capital and small letters and at least 1 number and symbol :)");
-		}else
+		if (Validation::password(password)) {
 			this->password = password;
+		}else
+			cout << "Invalid Password ID !!\nPlease use Capital and small letters and at least 1 number and symbol :)" << endl;
 	}
 	void setGender(string gender) {
-			this->gender = gender;
+		this->gender = gender;
 	}
 	void setPhone(string phone) {
-		if (!(Validation::phone(phone))) {
-			//throw exception("Invalid Phone number !!");
+		if (Validation::phone(phone)) {
+			this->phone = phone;
 		}
 		else
-			this->phone = phone;
+			cout << "Invalid Phone number !!" << endl;
 	}
 	void setEmail(string email) {
-		if (!(Validation::email(email))) {
-			//throw exception("Invalid Email !!");
+		if (Validation::email(email)) {
+			this->email = email;
 		}
 		else
-			this->email = email;
+			cout << "Invalid Email !!" << endl;
 	}
 
 	// Getters :
@@ -133,31 +156,6 @@ public:
 
 	// Methods:
 	virtual void displayInfo() = 0;
-
-	Date getBirthDateFromId() {
-		if (!Validation::nationalId(this->nationalID)) {
-			//throw exception("Invalid National ID !");
-		}
-		string nationalId = this->nationalID;
-		string date = nationalId.substr(0, 7);
-		int nDate = stoi(date);
-		int arr[7]{};
-		for (int i = 6; i >= 0; i--)
-		{
-			arr[i] = nDate % 10;
-			nDate /= 10;
-		}
-		int day{}, month{}, year{};
-		day = arr[5] * 10 + arr[6];
-		month = arr[3] * 10 + arr[4];
-		if (arr[0] == 2) {
-			year = 1900 + arr[1] * 10 + arr[2];
-		}
-		else if (arr[0] == 3) {
-			year = 2000 + arr[1] * 10 + arr[2];
-		}
-		return Date(day, month, year);
-	}
 
 	// Destructor:
 	~Person() {

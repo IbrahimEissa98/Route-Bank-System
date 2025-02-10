@@ -1,18 +1,5 @@
 #include "Functions.h"
 
-#include <iostream>
-#include <string>
-#include <Windows.h>
-#include <cstdlib>
-#include <chrono>
-#include <thread>
-#include "Validation.h"
-#include "Client.h"
-#include "Employee.h"
-using namespace std;
-
-
-
 void WelcomePage() {
 	string welcomePage[] = {
 	"                          *     *  *******  *         *****   *****    *     *  *******",
@@ -83,11 +70,11 @@ string inputName() {
 string inputPassword() {
 	cout << "Password :  ";
 	string pass;
-	getline(cin >> ws, pass);
+	cin >> pass;
 	while (!(Validation::password(pass))) {
 		cout << "Invalid Password ID !!\nPlease use Capital and small letters and at least 1 number and symbol :)" << endl;
 		cout << "Password :  ";
-		getline(cin >> ws, pass);
+		cin >> pass;;
 	}
 	return pass;
 }
@@ -170,7 +157,7 @@ double inputSalary() {
 }
 
 void addClient() {
-	cout << "Adding Client -->>" << endl;
+	cout << "\nAdding Client -->>" << endl;
 	string id = inputID();
 	string name = inputName();
 	string pass = inputPassword();
@@ -180,6 +167,7 @@ void addClient() {
 	double balance = inputBalance();
 	Client c(id, name, pass, gender, phone, email, balance);
 	c.displayInfo();
+
 }
 
 

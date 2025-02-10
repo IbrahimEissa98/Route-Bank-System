@@ -1,10 +1,8 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
-#include <iostream>
-#include <string>
 #include"Employee.h"
-using namespace std;
+
 
 class Admin :public Employee {
 public:
@@ -16,6 +14,8 @@ public:
 		string gender, string phone, double salary)
 		:Employee(nationalID, name, password, gender, phone, salary) {
 	}
+
+	~Admin(){}
 };
 
 #endif // ADMIN_H

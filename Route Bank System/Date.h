@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <exception>
-#include "functions.h"
 using namespace std;
 
 class Date {
