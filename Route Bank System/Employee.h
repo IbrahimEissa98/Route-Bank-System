@@ -1,12 +1,7 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
-#include <iostream>
-#include <string>
-#include <exception>
-#include"Date.h"
 #include"Person.h"
-using namespace std;
 
 class Employee :public Person {
 protected:
@@ -21,22 +16,22 @@ public:
 	Employee(string nationalID, string name, string password,
 		string gender, string phone, string email, double salary)
 		:Person(nationalID, name, password, gender,phone,email) {
-		this->salary = salary;
+		setSalary(salary);
 	}
 
 	Employee(string nationalID, string name, string password,
 		string gender, string phone, double salary)
 		:Person(nationalID, name, password, gender, phone) {
-		this->salary = salary;
+		setSalary(salary);
 	}
 
 
 	void setSalary(double salary) {
-		if (!(Validation::balance(salary))) {
-			//throw exception("Invalid less Salary !!");
+		if (Validation::salary(salary)) {
+			this->salary = salary;
 		}
 		else {
-			this->salary = salary;
+			cout << "Invalid less Salary !!" << endl;
 		}
 	}
 

@@ -1,11 +1,7 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include <iostream>
-#include <string>
-#include <exception>
 #include "Person.h"
-using namespace std;
 
 class Client :public Person {
 	// Attributes:
@@ -23,13 +19,13 @@ public:
 		string gender, string phone, string email, double balance)
 		:Person(nationalID, name, password, gender,phone,email) {
 		accountNumber = "Route" + to_string(++staticAccountNumber);
-		this->balance = balance;
+		setBalance(balance);
 	}
 	Client(string nationalID, string name, string password,
 		string gender, string phone, double balance)
 		:Person(nationalID, name, password, gender, phone) {
 		accountNumber = "Route" + to_string(++staticAccountNumber);
-		this->balance = balance;
+		setBalance(balance);
 	}
 	Client(Client& c) {
 		accountNumber = "Route" + to_string(++staticAccountNumber);
@@ -45,10 +41,11 @@ public:
 
 	// Setters:
 	void setBalance(double balance) {
-		if (!(Validation::balance(balance))) {
-			//throw exception("Invalid Start Balance !!");
+		if (Validation::balance(balance)) {
+			this->balance = balance;
 		}
-		this->balance = balance;
+		else
+			cout << "Invalid Start Balance !!" << endl;
 	}
 
 	// Getters:
@@ -61,23 +58,28 @@ public:
 
 	// Methods:
 	void deposit(double amount) {
-		this->balance += amount;
+		if (amount > 0) {
+			this->balance += amount;
+		}
+		else {
+			cout << "Invalid Amount !!" << endl;
+		}
 	}
 	void withdraw(double amount) {
-		if (amount < balance) {
+		if (amount <= balance && amount > 0) {
 			this->balance -= amount;
 		}
 		else {
-			//throw exception("Invalid Amount !!");
+			cout << "Invalid Amount !!" << endl;
 		}
 	}
 	void trnsferTo(double amount, Client& recipient) {
-		if (amount < balance) {
+		if (amount <= balance && amount > 0) {
 			this->balance -= amount;
 			recipient.balance += amount;
 		}
 		else {
-			//throw exception("Invalid Amount !!");
+			cout << "Invalid Amount !!" << endl;
 		}
 	}
 	void checkBalance() {
