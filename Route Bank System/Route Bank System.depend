@@ -18,18 +18,10 @@
 	<cmath>
 	"functions.h"
 
-1738556839 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\main.cpp
-	<iostream>
-	<string>
-	<exception>
-	<Windows.h>
-	<cstdlib>
-	<cmath>
-	"Functions.h"
-	"Client.h"
-	"Validation.h"
+1739548797 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\main.cpp
+	"FileManager.h"
 
-1739156364 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.h
+1739157283 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.h
 	"Validation.h"
 	<fstream>
 	<chrono>
@@ -37,26 +29,27 @@
 	"Client.h"
 	"Admin.h"
 
-1739156806 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\person.h
+1739547993 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\person.h
 	<exception>
 	"Date.h"
 	"Validation.h"
-	<chrono>
 
-1739156171 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\date.h
+1739157283 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\date.h
 	<iostream>
 	<string>
 
-1738556375 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.cpp
+1739548517 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.cpp
 	"Client.h"
 
-1739156122 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.h
+1739547793 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\client.h
 	"Person.h"
+	"GlobalMethods.h"
 
-1739156701 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\validation.h
-	<iostream>
-	<string>
+1739548036 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\validation.h
+	"Date.h"
 	<regex>
+	<thread>
+	<chrono>
 
 1738556611 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\validation.cpp
 	"Validation.h"
@@ -64,15 +57,60 @@
 1738556499 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\admin.cpp
 	"Admin.h"
 
-1739155962 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\admin.h
+1739548636 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\admin.h
 	"Employee.h"
 
-1739156233 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\employee.h
-	"Person.h"
+1739547885 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\employee.h
+	"Client.h"
+	<fstream>
 
 1738556463 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\employee.cpp
 	"Employee.h"
 
-1739156314 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.cpp
+1739157283 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\functions.cpp
 	"Functions.h"
+
+1739548274 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\globalmethods.h
+	<sstream>
+	<vector>
+	"Validation.h"
+
+1739220754 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\datasourceinterface.cpp
+	"DataSourceInterface.h"
+
+1739547838 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\datasourceinterface.h
+	"Admin.h"
+	"Client.h"
+
+1739548181 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\fileshelper.cpp
+	"FilesHelper.h"
+
+1739548211 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\fileshelper.h
+	<fstream>
+	"GlobalData.h"
+	"Parser.h"
+
+1739548678 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\globaldata.h
+	<functional>
+	"Admin.h"
+
+1739548478 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\parser.h
+	<string>
+	<sstream>
+	"Admin.h"
+
+1739548330 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\globaldata.cpp
+	"GlobalData.h"
+
+1739548251 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\globalmethods.cpp
+	"GlobalMethods.h"
+
+1739548384 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\parser.cpp
+	"Parser.h"
+
+1739548109 source:d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\filemanager.cpp
+	"FileManager.h"
+
+1739548780 d:\route academy\visual studio\route bank system project\bank system by codeblocks\route-bank-system\route bank system\filemanager.h
+	"FilesHelper.h"
 
