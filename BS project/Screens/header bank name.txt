@@ -1,0 +1,5 @@
+	        RRR     RRR    R   R  RRRRR  RRRRR          $$$$    $$$   $     $  $  $
+	        R  R   R   R   R   R    R    R	            $   $  $   $  $ $   $  $ $        
+                RRR    R   R   R   R    R    RRRRR          $$$$   $$$$$  $  $  $  $$
+	        R R    R   R   R   R    R    R	            $   $  $   $  $    $$  $ $
+	        R  R    RRR     RRR     R    RRRRR          $$$$   $   $  $     $  $  $

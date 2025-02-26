@@ -1,0 +1,15 @@
+                          |RRRRR      RRRRR     |R     R|  |RRRRRRR|  |RRRRRRR
+                          |R    R   |R     R|   |R     R|     |R|     |R      
+                          |R    R   |R     R|   |R     R|     |R|     |R      
+                          |RRRRR    |R     R|   |R     R|     |R|     |RRRRRRR
+                          |R   R    |R     R|   |R     R|     |R|     |R      
+                          |R    R   |R     R|   |R     R|     |R|     |R      
+                          |R     R    RRRRR       RRRRR       |R|     |RRRRRRR
+
+                                    $$$$$$    $$$$   $     $  $    $
+                                    $     $  $    $  $$    $  $   $ 
+                                    $     $  $    $  $ $   $  $  $  
+                                    $$$$$$   $$$$$$  $  $  $  $$$   
+                                    $     $  $    $  $   $ $  $  $  
+                                    $     $  $    $  $    $$  $   $ 
+                                    $$$$$$   $    $  $     $  $    $
